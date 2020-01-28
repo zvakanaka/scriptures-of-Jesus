@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/static/js/main.dd397781.chunk.js",
-    "main.js.map": "/static/js/main.dd397781.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.94c345a9.chunk.js": "/static/js/2.94c345a9.chunk.js",
-    "static/js/2.94c345a9.chunk.js.map": "/static/js/2.94c345a9.chunk.js.map",
+    "main.js": "/scriptures-of-Jesus/static/js/main.dd397781.chunk.js",
+    "main.js.map": "/scriptures-of-Jesus/static/js/main.dd397781.chunk.js.map",
+    "runtime~main.js": "/scriptures-of-Jesus/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/scriptures-of-Jesus/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.94c345a9.chunk.js": "/scriptures-of-Jesus/static/js/2.94c345a9.chunk.js",
+    "static/js/2.94c345a9.chunk.js.map": "./static/js/2.94c345a9.chunk.js.map",
     "index.html": "/index.html",
     "precache-manifest.a00200c0d0acf76b08bb24509239474c.js": "/precache-manifest.a00200c0d0acf76b08bb24509239474c.js",
     "service-worker.js": "/service-worker.js"
