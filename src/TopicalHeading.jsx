@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/core";
 
 function TopicalHeading({ heading, count, listItems, onCheck }) {
+  const [isExpanded, setIsExpanded] = useState(() => false);
   const [checkedItems, setCheckedItems] = useState(
     listItems.map(({ key }) => localStorage.getItem(key))
   );
@@ -26,8 +27,9 @@ function TopicalHeading({ heading, count, listItems, onCheck }) {
 
   const allChecked = checkedItems.every(Boolean);
   const isIndeterminate = checkedItems.some(Boolean) && !allChecked;
+
   return (
-    <AccordionItem>
+    <AccordionItem onChange={() => setIsExpanded(!isExpanded)}>
       <AccordionHeader>
         <Box flex="1" textAlign="left">
           <Flex>
@@ -52,45 +54,48 @@ function TopicalHeading({ heading, count, listItems, onCheck }) {
         </Box>
         <AccordionIcon />
       </AccordionHeader>
-      <AccordionPanel pb={4}>
-        <List spacing={1} style={{ marginLeft: "25px" }}>
-          {listItems.map((li, i) => {
-            return (
-              <ListItem key={li.key}>
-                <Checkbox
-                  key={li.key}
-                  isChecked={checkedItems[i]}
-                  onChange={e =>
-                    updateCheckedItems(
-                      checkedItems.map((item, j) =>
-                        i === j ? e.target.checked : item
-                      ),
-                      li.key,
-                      e.target.checked
-                    )
-                  }
-                >
-                  {li.nodes.map(node => {
-                    if (node.tag === "A") {
-                      return (
-                        <Link
-                          color="teal.300"
-                          key={node.href}
-                          isExternal
-                          href={node.href}
-                        >
-                          {node.text}
-                          {/* <Icon name="external-link" mx="2px" /> */}
-                        </Link>
-                      );
-                    } else return node.text;
-                  })}
-                </Checkbox>
-              </ListItem>
-            );
-          })}
-        </List>
-      </AccordionPanel>
+
+      {isExpanded ? (
+        <AccordionPanel pb={4}>
+          <List spacing={1} style={{ marginLeft: "25px" }}>
+            {listItems.map((li, i) => {
+              return (
+                <ListItem key={li.key}>
+                  <Checkbox
+                    key={li.key}
+                    isChecked={checkedItems[i]}
+                    onChange={e =>
+                      updateCheckedItems(
+                        checkedItems.map((item, j) =>
+                          i === j ? e.target.checked : item
+                        ),
+                        li.key,
+                        e.target.checked
+                      )
+                    }
+                  >
+                    {li.nodes.map(node => {
+                      if (node.tag === "A") {
+                        return (
+                          <Link
+                            color="teal.300"
+                            key={node.href}
+                            isExternal
+                            href={node.href}
+                          >
+                            {node.text}
+                            {/* <Icon name="external-link" mx="2px" /> */}
+                          </Link>
+                        );
+                      } else return node.text;
+                    })}
+                  </Checkbox>
+                </ListItem>
+              );
+            })}
+          </List>
+        </AccordionPanel>
+      ) : null}
     </AccordionItem>
   );
 }
