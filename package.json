@@ -2,6 +2,7 @@
   "name": "scriptures-of-Jesus",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://zvakanaka.github.io/scriptures-of-Jesus",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
@@ -9,6 +10,7 @@
     "@emotion/core": "10.0.27",
     "@emotion/styled": "10.0.27",
     "emotion-theming": "10.0.27",
+    "gh-pages": "^2.2.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-scripts": "3.0.1"
@@ -17,6 +19,8 @@
     "typescript": "3.3.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

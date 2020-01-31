@@ -1,3 +1,12 @@
+// https://www.churchofjesuschrist.org/blog/i-studied-more-than-2200-scriptures-about-the-savior-in-six-weeks-here-is-a-little-of-what-i-learned?lang=eng
+// https://www.churchofjesuschrist.org/broadcasts/article/worldwide-devotionals/2017/01/prophets-leadership-and-divine-law?lang=eng
+// https://tech.churchofjesuschrist.org/forum/viewtopic.php?t=28362
+// https://ldsperspectives.com/2019/12/04/jesus-christ-in-the-topical-guide-with-stephanie-dibb-sorensen/
+// https://www.churchofjesuschrist.org/study/general-conference/2017/04/drawing-the-power-of-jesus-christ-into-our-lives?lang=eng
+// https://scriptures.byu.edu/
+// https://www.churchofjesuschrist.org/study/scriptures/tg/jesus-christ?lang=eng
+// https://thirdhour.org/forums/topic/61247-elder-nelsons-2200-scripture-challenge/
+
 import React from "react";
 import {
   Accordion,
@@ -5,13 +14,13 @@ import {
   CSSReset,
   ColorModeProvider,
   Heading,
-  Link,
-  Flex
+  Flex,
+  Link
 } from "@chakra-ui/core";
 import ColorModeToggle from "./ColorModeToggle";
 import TopicalHeading from "./TopicalHeading";
 import Page from "./Page";
-import data from "./data/output-min.json";
+import data from "./data/output.json";
 
 function onCheck(key, checked) {
   const storedItem = localStorage.getItem(key);

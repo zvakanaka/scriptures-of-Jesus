@@ -11,7 +11,8 @@ import {
   AccordionPanel,
   AccordionIcon,
   Heading,
-  Flex
+  Flex,
+  useColorMode
 } from "@chakra-ui/core";
 
 function TopicalHeading({ heading, count, listItems, onCheck }) {
@@ -27,6 +28,8 @@ function TopicalHeading({ heading, count, listItems, onCheck }) {
 
   const allChecked = checkedItems.every(Boolean);
   const isIndeterminate = checkedItems.some(Boolean) && !allChecked;
+
+  const { colorMode } = useColorMode();
 
   return (
     <AccordionItem onChange={() => setIsExpanded(!isExpanded)}>
@@ -78,7 +81,9 @@ function TopicalHeading({ heading, count, listItems, onCheck }) {
                       if (node.tag === "A") {
                         return (
                           <Link
-                            color="teal.300"
+                            color={
+                              colorMode === "dark" ? "blue.300" : "blue.500"
+                            }
                             key={node.href}
                             isExternal
                             href={node.href}
