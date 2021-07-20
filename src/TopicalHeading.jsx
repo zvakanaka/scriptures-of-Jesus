@@ -15,10 +15,10 @@ import {
   useColorMode
 } from "@chakra-ui/core";
 
-function TopicalHeading({ heading, count, listItems, onCheck }) {
+function TopicalHeading({ heading, count, listItems, onCheck, storageMirror }) {
   const [isExpanded, setIsExpanded] = useState(() => false);
   const [checkedItems, setCheckedItems] = useState(
-    listItems.map(({ key }) => localStorage.getItem(key))
+    listItems.map(({ key }, i) => storageMirror[key])
   );
 
   function updateCheckedItems(arr, key, checked) {
